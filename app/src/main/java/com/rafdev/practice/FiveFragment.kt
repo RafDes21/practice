@@ -2,37 +2,37 @@ package com.rafdev.practice
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 
-class FourthFragment : Fragment() {
+
+class FiveFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_fourth, container, false)
+        return inflater.inflate(R.layout.fragment_five, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val btn = view.findViewById<Button>(R.id.btnClick)
-            btn.setOnClickListener {
+        btn.setOnClickListener {
 
-                saveSelectedTab(5)
+            saveSelectedTab(4)
 
-                parentFragmentManager.beginTransaction()
-                    .replace(
-                        R.id.profileContainerFragment,
-                        FiveFragment()
-                    )
-                    .commit()
-            }
-
+            parentFragmentManager.beginTransaction()
+                .replace(
+                    R.id.profileContainerFragment,
+                    FourthFragment()
+                )
+                .commit()
+        }
     }
 
     private fun saveSelectedTab(tabNumber: Int) {
@@ -43,7 +43,3 @@ class FourthFragment : Fragment() {
     }
 
 }
-
-
-
-
