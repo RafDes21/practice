@@ -37,6 +37,7 @@ class SecondFragment : Fragment() {
                     when (selectedTab) {
                         4 -> FourthFragment()
                         5 -> FiveFragment()
+                        6 -> SixFragment()
                         else -> FourthFragment()  // Fragment por defecto en caso de que no se haya guardado ningún estado
                     }
                 )
@@ -46,6 +47,9 @@ class SecondFragment : Fragment() {
 
     private fun loadSelectedTab(): Int {
         val sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
-        return sharedPreferences.getInt(SELECTED_TAB_KEY, 4) // Valor por defecto es 4 si no hay nada guardado
+        return sharedPreferences.getInt(
+            SELECTED_TAB_KEY,
+            4
+        ) // Valor por defecto es 4 si no hay nada guardado
     }
 }
