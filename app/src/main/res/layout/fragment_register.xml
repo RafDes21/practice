@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".RegisterFragment">
 
     <include
@@ -155,40 +155,53 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCreateAccount"
-                style="@style/PrimaryButton"
-                android:layout_width="0dp"
-                android:layout_height="44dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="24dp"
-                android:text="@string/signin_button_createaccount"
-                app:layout_constraintBottom_toTopOf="@+id/viewBottom"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilRepeatPassword" />
 
-            <include
-                android:id="@+id/viewBottom"
-                layout="@layout/view_bottom"
-                android:layout_width="0dp"
-                android:layout_marginTop="24dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/actAutocomplete"
+                    style="@style/AutoCompleteTextViewStyle"
+                    android:layout_width="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tilRepeatPassword"
+                    android:layout_height="100dp"
+                    android:inputType="none"
+                    android:dropDownHeight="wrap_content" />
+
+
+            <!--            <com.google.android.material.button.MaterialButton-->
+            <!--                android:id="@+id/btnCreateAccount"-->
+            <!--                style="@style/PrimaryButton"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="44dp"-->
+            <!--                android:layout_marginHorizontal="16dp"-->
+            <!--                android:layout_marginVertical="24dp"-->
+            <!--                android:text="@string/signin_button_createaccount"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/layoutGender" />-->
+
+            <!--            <include-->
+            <!--                android:id="@+id/viewBottom"-->
+            <!--                layout="@layout/view_bottom"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-<!--    <ProgressBar-->
-<!--        android:id="@+id/pbLoading"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    <ProgressBar-->
+    <!--        android:id="@+id/pbLoading"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

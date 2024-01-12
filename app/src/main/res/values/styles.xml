@@ -31,8 +31,17 @@
         <item name="android:textColorHint">@color/primary</item>
         <item name="boxStrokeColor">@color/primary</item>
         <item name="boxStrokeWidth">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item> <!-- Borde inferior derecho -->
+        <item name="boxCornerRadiusBottomStart">0dp</item> <!-- Borde inferior izquierdo -->
+        <item name="boxCornerRadiusTopEnd">0dp</item> <!-- Borde superior derecho -->
+        <item name="boxCornerRadiusTopStart">0dp</item>
         <item name="errorTextColor">@color/error</item>
         <item name="hintTextColor">@color/primary</item>
+    </style>
+
+    <style name="AutoCompleteTextViewStyle" parent="Widget.MaterialComponents.AutoCompleteTextView.FilledBox">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:background">@drawable/border_edit_text</item>
     </style>
 
     <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
@@ -44,5 +53,9 @@
         <item name="android:gravity">center</item>
         <item name="backgroundTint">@color/primary</item>
 <!--        <item name="android:fontFamily">@font/montserrat</item>-->
+    </style>
+    <style name="SpinnerTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/primary</item> <!-- Reemplaza "tu_color" con el color deseado -->
+        <item name="android:textSize">16sp</item> <!-- Reemplaza "16sp" con el tamaño de texto deseado -->
     </style>
 </resources>
