@@ -4,7 +4,7 @@
     <style name="EditTextHintStyle" parent="Widget.AppCompat.EditText">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColorHint">@color/primary</item>
+        <item name="android:textColorHint">@color/black</item>
     </style>
 
     <style name="FormEditText" parent="Widget.AppCompat.EditText">
@@ -30,15 +30,15 @@
         <item name="errorEnabled">true</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
-        <item name="android:textColorHint">@color/primary</item>
-        <item name="boxStrokeColor">@color/primary</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="boxStrokeColor">@color/two</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxCornerRadiusBottomEnd">0dp</item>
         <item name="boxCornerRadiusBottomStart">0dp</item>
         <item name="boxCornerRadiusTopEnd">0dp</item>
         <item name="boxCornerRadiusTopStart">0dp</item>
         <item name="errorTextColor">@color/error</item>
-        <item name="hintTextColor">@color/primary</item>
+        <item name="hintTextColor">@color/four</item>
     </style>
 
     <style name="AutoCompleteTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -47,7 +47,7 @@
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:textColorHint">@color/primary</item>
-        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxStrokeColor">@color/black</item>
         <item name="boxStrokeWidth">1dp</item>
         <item name="boxCornerRadiusBottomEnd">0dp</item>
         <item name="boxCornerRadiusBottomStart">0dp</item>
