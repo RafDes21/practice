@@ -27,18 +27,21 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        val generoOptions = resources.getStringArray(R.array.gender_options)
+//        Log.i("GeneroOptions", generoOptions.joinToString(", "))
         val generoOptions = arrayOf("Masculino", "Femenino", "Otro")
 
-        val generoAdapter = ArrayAdapter(requireContext(),R.layout.list_item, generoOptions)
+        val generoAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, generoOptions)
         binding.actAutocomplete.setAdapter(generoAdapter)
         Log.i("GeneroAdapter", "Número de elementos en el adaptador: ${generoAdapter.count}")
+
+
+        binding.actAutocomplete.setAdapter(generoAdapter)
 
         binding.actAutocomplete.setOnItemClickListener { _, _, position, _ ->
             val selectedGenero = generoAdapter.getItem(position)
             showToast("Género seleccionado: $selectedGenero")
         }
-
-        // Resto de tu código...
     }
 
     private fun showToast(message: String) {
