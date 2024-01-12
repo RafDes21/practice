@@ -7,6 +7,8 @@
     <color name="tree">#00796B</color>
     <color name="four">#C2185B</color>
     <color name="six">#1834C2</color>
+    <color name="transparent">#001834C2</color>
+
 
     <color name="primary_dark">#4F934A</color>
     <color name="primary">#569B51</color>

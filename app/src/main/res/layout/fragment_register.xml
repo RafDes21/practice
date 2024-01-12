@@ -146,7 +146,7 @@
                     android:id="@+id/etRepeatPassword"
                     style="@style/FormEditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:hint="@string/signin_form_repeat_password"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
@@ -160,6 +160,7 @@
                 style="@style/AutoCompleteTextViewStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                app:endIconDrawable="@drawable/ic_init"
                 android:layout_marginTop="12dp"
                 android:hint="Género"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -168,13 +169,13 @@
 
                 <AutoCompleteTextView
                     android:id="@+id/actAutocomplete"
-                    style="@style/AutoCompleteTextViewStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:dropDownHeight="wrap_content" />
+                    android:textSize="14sp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="@color/transparent"
+                    android:textColor="@color/primary"
+                    android:inputType="none" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <!--            <com.google.android.material.button.MaterialButton-->
             <!--                android:id="@+id/btnCreateAccount"-->

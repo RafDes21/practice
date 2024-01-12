@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="EditTextHintStyle" parent="Widget.AppCompat.EditText">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColorHint">@color/six</item>
+        <item name="android:textColorHint">@color/primary</item>
     </style>
 
     <style name="FormEditText" parent="Widget.AppCompat.EditText">
@@ -14,13 +15,14 @@
         <item name="maxLines">1</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:textColorHint">@color/secondary_light</item>
-<!--        <item name="android:fontFamily">@font/montserrat</item>-->
+        <!--        <item name="android:fontFamily">@font/montserrat</item>-->
     </style>
+
     <style name="CaptionText" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/secondary</item>
         <item name="android:gravity">center</item>
-<!--        <item name="android:fontFamily">@font/montserrat</item>-->
+        <!--        <item name="android:fontFamily">@font/montserrat</item>-->
     </style>
 
     <style name="FormTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -31,17 +33,40 @@
         <item name="android:textColorHint">@color/primary</item>
         <item name="boxStrokeColor">@color/primary</item>
         <item name="boxStrokeWidth">1dp</item>
-        <item name="boxCornerRadiusBottomEnd">0dp</item> <!-- Borde inferior derecho -->
-        <item name="boxCornerRadiusBottomStart">0dp</item> <!-- Borde inferior izquierdo -->
-        <item name="boxCornerRadiusTopEnd">0dp</item> <!-- Borde superior derecho -->
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
         <item name="boxCornerRadiusTopStart">0dp</item>
         <item name="errorTextColor">@color/error</item>
         <item name="hintTextColor">@color/primary</item>
     </style>
 
     <style name="AutoCompleteTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-        <item name="android:textColor">@color/primary</item>
-        <item name="android:background">@drawable/border_edit_text</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="errorEnabled">true</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textColorHint">@color/primary</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="endIconTint">@color/primary</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="hintTextColor">@color/primary</item>
+
+    </style>
+
+    <style name="FormEditAutocomplete" parent="Widget.AppCompat.AutoCompleteTextView">
+<!--        <item name="android:background">@drawable/border_edit_text</item>-->
+        <!--        <item name="android:textSize">14sp</item>-->
+        <!--        <item name="android:textColor">@color/secondary_light</item>-->
+        <!--        <item name="android:paddingLeft">16dp</item>-->
+        <!--        <item name="android:paddingRight">16dp</item>-->
+        <!--        <item name="android:textColorHint">@color/secondary_light</item>-->
+        <!-- Otras propiedades necesarias -->
     </style>
 
     <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
@@ -52,10 +77,6 @@
         <item name="android:textColor">@color/secondary</item>
         <item name="android:gravity">center</item>
         <item name="backgroundTint">@color/primary</item>
-<!--        <item name="android:fontFamily">@font/montserrat</item>-->
-    </style>
-    <style name="SpinnerTextStyle" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textColor">@color/primary</item> <!-- Reemplaza "tu_color" con el color deseado -->
-        <item name="android:textSize">16sp</item> <!-- Reemplaza "16sp" con el tamaño de texto deseado -->
+        <!--        <item name="android:fontFamily">@font/montserrat</item>-->
     </style>
 </resources>
