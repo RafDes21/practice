@@ -39,7 +39,7 @@
         <item name="hintTextColor">@color/primary</item>
     </style>
 
-    <style name="AutoCompleteTextViewStyle" parent="Widget.MaterialComponents.AutoCompleteTextView.FilledBox">
+    <style name="AutoCompleteTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="android:textColor">@color/primary</item>
         <item name="android:background">@drawable/border_edit_text</item>
     </style>

@@ -155,18 +155,25 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilAutocomplete"
+                style="@style/AutoCompleteTextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Género"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilRepeatPassword">
 
                 <AutoCompleteTextView
                     android:id="@+id/actAutocomplete"
                     style="@style/AutoCompleteTextViewStyle"
                     android:layout_width="match_parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tilRepeatPassword"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:inputType="none"
                     android:dropDownHeight="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <!--            <com.google.android.material.button.MaterialButton-->
