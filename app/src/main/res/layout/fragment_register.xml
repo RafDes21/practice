@@ -39,8 +39,6 @@
                 style="@style/FormTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:layout_constraintBottom_toTopOf="@+id/tilRealName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -63,8 +61,6 @@
                 style="@style/FormTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:layout_constraintBottom_toTopOf="@+id/tilEmail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilNickname">
@@ -87,8 +83,6 @@
                 style="@style/FormTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:layout_constraintBottom_toTopOf="@+id/tilPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilRealName">
@@ -111,8 +105,6 @@
                 style="@style/FormTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:layout_constraintBottom_toTopOf="@+id/tilRepeatPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilEmail">
@@ -136,8 +128,6 @@
                 style="@style/FormTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnCreateAccount"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilPassword">
@@ -160,9 +150,9 @@
                 style="@style/AutoCompleteTextViewStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:endIconDrawable="@drawable/ic_init"
                 android:layout_marginTop="12dp"
                 android:hint="Género"
+                app:endIconDrawable="@drawable/ic_init"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilRepeatPassword">
@@ -170,46 +160,46 @@
                 <AutoCompleteTextView
                     android:id="@+id/actAutocomplete"
                     android:layout_width="match_parent"
-                    android:textSize="14sp"
                     android:layout_height="60dp"
                     android:backgroundTint="@color/transparent"
+                    android:inputType="none"
                     android:textColor="@color/primary"
-                    android:inputType="none" />
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--            <com.google.android.material.button.MaterialButton-->
-            <!--                android:id="@+id/btnCreateAccount"-->
-            <!--                style="@style/PrimaryButton"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="44dp"-->
-            <!--                android:layout_marginHorizontal="16dp"-->
-            <!--                android:layout_marginVertical="24dp"-->
-            <!--                android:text="@string/signin_button_createaccount"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/layoutGender" />-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCreateAccount"
+                style="@style/PrimaryButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="24dp"
+                android:text="@string/signin_button_createaccount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilAutocomplete" />
 
-            <!--            <include-->
-            <!--                android:id="@+id/viewBottom"-->
-            <!--                layout="@layout/view_bottom"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_marginTop="24dp"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintStart_toStartOf="parent" />-->
+            <include
+                android:id="@+id/viewBottom"
+                layout="@layout/view_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-    <!--    <ProgressBar-->
-    <!--        android:id="@+id/pbLoading"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
