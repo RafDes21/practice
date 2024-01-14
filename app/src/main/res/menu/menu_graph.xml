@@ -3,14 +3,14 @@
     <item
         android:title="one"
         android:icon="@drawable/ic_prueba"
-        android:id="@+id/one"/>
+        android:id="@+id/firstFragment"/>
     <item
         android:title="two"
         android:icon="@drawable/ic_prueba"
-        android:id="@+id/two"/>
+        android:id="@+id/secondFragment"/>
     <item
         android:title="tree"
         android:icon="@drawable/ic_prueba"
-        android:id="@+id/tree"/>
+        android:id="@+id/thirdFragment"/>
 
 </menu>

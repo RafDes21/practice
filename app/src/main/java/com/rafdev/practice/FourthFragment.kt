@@ -9,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FourthFragment : Fragment() {
 
     override fun onCreateView(

@@ -1,4 +1,4 @@
-package com.rafdev.practice.signin
+package com.rafdev.practice.ui.signin
 
 data class SignInViewState(
     val isLoading: Boolean = false,

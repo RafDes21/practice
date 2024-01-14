@@ -5,14 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import com.rafdev.practice.core.dismissKeyboard
-import com.rafdev.practice.core.loseFocusAfterAction
-import com.rafdev.practice.core.onTextChanged
 import com.rafdev.practice.databinding.FragmentLoginBinding
+import com.rafdev.practice.ui.signin.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null

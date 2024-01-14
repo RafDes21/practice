@@ -1,4 +1,4 @@
-package com.rafdev.practice.signin.model
+package com.rafdev.practice.ui.signin.model
 
 data class UserSignIn(
     val realName: String,
