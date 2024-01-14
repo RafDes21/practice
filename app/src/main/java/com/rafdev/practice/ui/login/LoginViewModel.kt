@@ -1,10 +1,11 @@
-package com.rafdev.practice.ui.signin
+package com.rafdev.practice.ui.login
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rafdev.practice.core.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -26,9 +27,9 @@ class LoginViewModel @Inject constructor() : ViewModel() {
 //    val navigateToForgotPassword: LiveData<Event<Boolean>>
 //        get() = _navigateToForgotPassword
 //
-//    private val _navigateToSignIn = MutableLiveData<Event<Boolean>>()
-//    val navigateToSignIn: LiveData<Event<Boolean>>
-//        get() = _navigateToSignIn
+    private val _navigateToSignIn = MutableLiveData<Event<Boolean>>()
+    val navigateToSignIn: LiveData<Event<Boolean>>
+        get() = _navigateToSignIn
 //
 //    private val _navigateToVerifyAccount = MutableLiveData<Event<Boolean>>()
 //    val navigateToVerifyAccount: LiveData<Event<Boolean>>
@@ -82,9 +83,9 @@ class LoginViewModel @Inject constructor() : ViewModel() {
 //        _navigateToForgotPassword.value = Event(true)
 //    }
 //
-//    fun onSignInSelected() {
-//        _navigateToSignIn.value = Event(true)
-//    }
+    fun onSignInSelected() {
+        _navigateToSignIn.value = Event(true)
+    }
 //
 //    private fun isValidEmail(email: String) =
 //        Patterns.EMAIL_ADDRESS.matcher(email).matches() || email.isEmpty()

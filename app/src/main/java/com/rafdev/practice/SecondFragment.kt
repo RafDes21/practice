@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.rafdev.practice.ui.signin.SignIn
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,9 +23,9 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-            childFragmentManager.beginTransaction()
-                .replace(R.id.profileContainerFragment, SignIn())
-                .commit()
+//            childFragmentManager.beginTransaction()
+//                .replace(R.id.profileContainerFragment, SignIn())
+//                .commit()
         // Recuperar el estado actual desde SharedPreferences
 //        val selectedTab = loadSelectedTab()
 
