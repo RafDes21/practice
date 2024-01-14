@@ -51,7 +51,7 @@
         <item name="boxCornerRadiusTopStart">0dp</item>
         <item name="endIconTint">@color/primary</item>
         <item name="errorTextColor">@color/error</item>
-        <item name="hintTextColor">@color/primary</item>
+        <item name="hintTextColor">@color/two</item>
 
     </style>
 
