@@ -35,9 +35,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun initListeners() {
-        binding.etEmail.loseFocusAfterAction(EditorInfo.IME_ACTION_NEXT)
+//        binding.etEmail.loseFocusAfterAction(EditorInfo.IME_ACTION_NEXT)
 //        binding.etEmail.onTextChanged { onFieldChanged() }
-        binding.etPassword.loseFocusAfterAction(EditorInfo.IME_ACTION_DONE)
+//        binding.etPassword.loseFocusAfterAction(EditorInfo.IME_ACTION_DONE)
 //        binding.etPassword.setOnFocusChangeListener { _, hasFocus -> onFieldChanged(hasFocus) }
         binding.btnLogin.setOnClickListener {
             it.dismissKeyboard()

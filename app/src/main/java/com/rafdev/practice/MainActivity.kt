@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener ( onNavMenu )
 
         supportFragmentManager.commit {
-            replace(R.id.container_fragment, LoginFragment())
+            replace(R.id.container_fragment, RegisterFragment())
             setReorderingAllowed(true)
             addToBackStack("replacement")
 

@@ -36,7 +36,7 @@
         <item name="boxCornerRadiusTopEnd">0dp</item>
         <item name="boxCornerRadiusTopStart">0dp</item>
         <item name="errorTextColor">@color/error</item>
-        <item name="hintTextColor">@color/four</item>
+        <item name="hintTextColor">@color/primary</item>
     </style>
 
     <style name="AutoCompleteTextViewStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
