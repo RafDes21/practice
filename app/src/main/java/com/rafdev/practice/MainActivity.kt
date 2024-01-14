@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.commit
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.rafdev.practice.signin.SignIn
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener ( onNavMenu )
 
         supportFragmentManager.commit {
-            replace(R.id.container_fragment, RegisterFragment())
+            replace(R.id.container_fragment, SignIn())
             setReorderingAllowed(true)
             addToBackStack("replacement")
 

@@ -1,14 +1,11 @@
 package com.rafdev.practice
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
-import androidx.fragment.app.commit
+import com.rafdev.practice.signin.SignIn
 
 class SecondFragment : Fragment() {
 
@@ -26,7 +23,7 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
             childFragmentManager.beginTransaction()
-                .replace(R.id.profileContainerFragment, RegisterFragment())
+                .replace(R.id.profileContainerFragment, SignIn())
                 .commit()
         // Recuperar el estado actual desde SharedPreferences
 //        val selectedTab = loadSelectedTab()
