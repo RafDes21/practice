@@ -1,6 +1,7 @@
 package com.rafdev.practice.domain
 
 import android.util.Log
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.rafdev.practice.data.network.AuthenticationService
 import com.rafdev.practice.data.network.UserService
 import com.rafdev.practice.ui.signin.model.UserSignIn
@@ -12,15 +13,21 @@ class CreateAccountUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(userSignIn: UserSignIn): Boolean {
-//        val accountCreated =
-        val authResult = authenticationService.createAccount(userSignIn.email, userSignIn.password)
-        return if (authResult != null) {
-            val uid = authResult.user?.uid
-
-            // Loguear el UID (opcional)
-            Log.i("UID", "UID: $uid")
-            userService.createUserTable(userSignIn, userId = uid)
-        } else {
+        return try {
+            val accountCreated = authenticationService.createAccount(userSignIn.email, userSignIn.password)
+            if (accountCreated != null) {
+                val uid = accountCreated.user?.uid
+                userService.createUserTable(userSignIn, userId = uid)
+            } else {
+                // El registro fue exitoso
+                false
+            }
+        } catch (e: FirebaseAuthUserCollisionException) {
+            // El correo electrónico ya está registrado
+            Log.i("CreateAccountUseCase", "Correo electrónico ya registrado")
+            false
+        } catch (e: Exception) {
+            // Otros errores durante el registro
             false
         }
     }

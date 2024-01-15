@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rafdev.practice.core.Event
-import com.rafdev.practice.domain.CheckEmailExistenceUseCase
 import com.rafdev.practice.domain.CreateAccountUseCase
 import com.rafdev.practice.ui.signin.model.UserSignIn
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,7 +18,6 @@ import javax.inject.Inject
 @HiltViewModel
 class SignInViewModel @Inject constructor(
     val createAccountUseCase: CreateAccountUseCase,
-    val checkEmailExistenceUseCase: CheckEmailExistenceUseCase
 ) : ViewModel() {
 
     private companion object {
@@ -52,32 +50,16 @@ class SignInViewModel @Inject constructor(
     private fun signInUser(userSignIn: UserSignIn) {
         viewModelScope.launch {
             _viewState.value = SignInViewState(isLoading = true)
-            val isTaken = checkEmailExistenceUseCase(userSignIn.email)
+            val accountCreated = createAccountUseCase(userSignIn)
 
-            Log.i("usuario", "$isTaken")
-
-            if (isTaken) {
-                Log.i("usuario", "ya existe")
-
+            if (accountCreated) {
+//                _navigateToVerifyEmail.value = Event(true)
             } else {
+                Log.i("SignInViewModel", "Correo electrónico ya registrado")
 
-                Log.i("usuario", "registrar")
-
-//                val accountCreated = createAccountUseCase(userSignIn)
-//                Log.i("usuario", "creado $accountCreated")
-//
-//                if (accountCreated) {
-//                    Log.i("usuario", "creado $accountCreated")
-////                _navigateToVerifyEmail.value = Event(true)
-//                } else {
-//                    Log.i("usuario", "error $accountCreated")
-//
-////                _showErrorDialog.value = true
-//                }
-//                _viewState.value = SignInViewState(isLoading = false)
+//                _showErrorDialog.value = true
             }
-
-
+            _viewState.value = SignInViewState(isLoading = false)
         }
     }
 

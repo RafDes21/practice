@@ -25,10 +25,6 @@ class AuthenticationService @Inject constructor(private val firebase: FirebaseCl
 //        firebase.auth.signInWithEmailAndPassword(email, password).await()
 //    }.toLoginResult
 
-    suspend fun isEmailTaken(email: String): SignInMethodQueryResult? {
-        return firebase.auth.fetchSignInMethodsForEmail(email).await()
-    }
-
     suspend fun createAccount(email: String, password: String): AuthResult? {
         return firebase.auth.createUserWithEmailAndPassword(email, password).await()
     }
