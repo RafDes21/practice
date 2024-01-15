@@ -51,31 +51,35 @@ class SignInViewModel @Inject constructor(
 
     private fun signInUser(userSignIn: UserSignIn) {
         viewModelScope.launch {
-            try {
-                _viewState.value = SignInViewState(isLoading = true)
-                val isEmailTaken = checkEmailExistenceUseCase(userSignIn.email)
-                Log.i("usuario", "isEmailTaken: $isEmailTaken")
+            _viewState.value = SignInViewState(isLoading = true)
+            val isTaken = checkEmailExistenceUseCase(userSignIn.email)
 
-                if (isEmailTaken) {
-                    Log.i("usuario", "usuario ya existe")
-                } else {
-                    val accountCreated = createAccountUseCase(userSignIn)
-                    if (accountCreated) {
-                        Log.i("usuario", "creado")
-                        // _navigateToVerifyEmail.value = Event(true)
-                    } else {
-                        Log.i("usuario", "error al crear la cuenta")
-                        // _showErrorDialog.value = true
-                    }
-                }
-            } catch (e: Exception) {
-                Log.e("SignInViewModel", "Error en signInUser", e)
-            } finally {
-                _viewState.value = SignInViewState(isLoading = false)
+            Log.i("usuario", "$isTaken")
+
+            if (isTaken) {
+                Log.i("usuario", "ya existe")
+
+            } else {
+
+                Log.i("usuario", "registrar")
+
+//                val accountCreated = createAccountUseCase(userSignIn)
+//                Log.i("usuario", "creado $accountCreated")
+//
+//                if (accountCreated) {
+//                    Log.i("usuario", "creado $accountCreated")
+////                _navigateToVerifyEmail.value = Event(true)
+//                } else {
+//                    Log.i("usuario", "error $accountCreated")
+//
+////                _showErrorDialog.value = true
+//                }
+//                _viewState.value = SignInViewState(isLoading = false)
             }
+
+
         }
     }
-
 
     fun onFieldsChanged(userSignIn: UserSignIn) {
         _viewState.value = userSignIn.toSignInViewState()
