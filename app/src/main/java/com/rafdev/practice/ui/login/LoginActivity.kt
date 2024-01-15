@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import com.rafdev.practice.databinding.ActivityLoginBinding
 import com.rafdev.practice.ui.signin.SignInActivity
@@ -36,6 +38,13 @@ class LoginActivity : AppCompatActivity() {
         binding.viewBottom.setOnClickListener { viewModel.onSignInSelected() }
         binding.viewHeader.ivLogo.setOnClickListener{finish()}
 
+        binding.btnLogin.setOnClickListener {
+            viewModel.onLoginSelected(
+                binding.etEmail.text.toString(),
+                binding.etPassword.text.toString()
+            )
+        }
+
     }
 
     private fun initObservers() {
@@ -44,12 +53,41 @@ class LoginActivity : AppCompatActivity() {
                 goToLogin()
             }
         }
+
+        viewModel.navigateToDetails.observe(this) {
+            it.getContentIfNotHandled()?.let {
+                goToDetail()
+            }
+        }
+        viewModel.navigateToVerifyAccount.observe(this) {
+            it.getContentIfNotHandled()?.let {
+                goToVerify()
+            }
+        }
+        viewModel.showContinueButton.observe(this) {
+            it.getContentIfNotHandled()?.let {
+                goToVe()
+            }
+        }
+    }
+
+    private fun goToVe() {
+        binding.progress.visibility = View.GONE
     }
 
     private fun goToLogin() {
         startActivity(SignInActivity.create(this))
         finish()
 
+    }
+    private fun goToDetail() {
+        finish()
+        binding.progress.visibility = View.GONE
+    }
+
+    private fun goToVerify() {
+        Log.i("usuario", "verificando")
+        binding.progress.visibility = View.VISIBLE
     }
 
 }
