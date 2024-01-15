@@ -10,9 +10,11 @@ import com.rafdev.practice.core.Event
 import com.rafdev.practice.core.response.LoginResult
 import com.rafdev.practice.domain.LoginUseCase
 import com.rafdev.practice.domain.SendEmailVerificationUseCase
+import com.rafdev.practice.domain.VerifyEmailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,7 +22,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     val loginUseCase: LoginUseCase,
     val sendEmailVerificationUseCase: SendEmailVerificationUseCase,
-    val verificationUseCase: SendEmailVerificationUseCase
+    val verificationUseCase: VerifyEmailUseCase
 ) : ViewModel() {
 
     private companion object {
