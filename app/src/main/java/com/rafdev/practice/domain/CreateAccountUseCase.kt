@@ -15,8 +15,11 @@ class CreateAccountUseCase @Inject constructor(
     suspend operator fun invoke(userSignIn: UserSignIn): Boolean {
         return try {
             val accountCreated = authenticationService.createAccount(userSignIn.email, userSignIn.password)
+            Log.i("usuario", "uid $accountCreated")
+
             if (accountCreated != null) {
-                val uid = accountCreated.user?.uid
+                val uid = accountCreated?.user?.uid
+                Log.i("usuario", "uid $uid")
                 userService.createUserTable(userSignIn, userId = uid)
             } else {
                 // El registro fue exitoso

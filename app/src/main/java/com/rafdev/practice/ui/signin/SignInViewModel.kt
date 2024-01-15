@@ -53,9 +53,12 @@ class SignInViewModel @Inject constructor(
             val accountCreated = createAccountUseCase(userSignIn)
 
             if (accountCreated) {
+                Log.i("usuario", "se registro")
+                _navigateToLogin.value = Event(true)
+
 //                _navigateToVerifyEmail.value = Event(true)
             } else {
-                Log.i("SignInViewModel", "Correo electrónico ya registrado")
+                Log.i("usuario", "Correo electrónico ya registrado")
 
 //                _showErrorDialog.value = true
             }

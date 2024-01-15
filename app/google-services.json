@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "473900585630",
-    "project_id": "practice-989d0",
-    "storage_bucket": "practice-989d0.appspot.com"
+    "project_number": "547467833928",
+    "project_id": "register-e3997",
+    "storage_bucket": "register-e3997.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:473900585630:android:92ec7e81e155295351618f",
+        "mobilesdk_app_id": "1:547467833928:android:206a905763fd9121b59e7d",
         "android_client_info": {
           "package_name": "com.rafdev.practice"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBfaBJRmZI8BHjcNNMFrHra7GjQVKyvGmU"
+          "current_key": "AIzaSyDsr7Rolnlu_6BoN7X0Fd7knEASbseMc4M"
         }
       ],
       "services": {
