@@ -1,5 +1,6 @@
 package com.rafdev.practice.domain
 
+import android.util.Log
 import com.rafdev.practice.data.network.AuthenticationService
 import com.rafdev.practice.data.network.UserService
 import com.rafdev.practice.ui.signin.model.UserSignIn
@@ -11,10 +12,14 @@ class CreateAccountUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(userSignIn: UserSignIn): Boolean {
-        val accountCreated =
-            authenticationService.createAccount(userSignIn.email, userSignIn.password) != null
-        return if (accountCreated) {
-            userService.createUserTable(userSignIn)
+//        val accountCreated =
+        val authResult = authenticationService.createAccount(userSignIn.email, userSignIn.password)
+        return if (authResult != null) {
+            val uid = authResult.user?.uid
+
+            // Loguear el UID (opcional)
+            Log.i("UID", "UID: $uid")
+            userService.createUserTable(userSignIn, userId = uid)
         } else {
             false
         }

@@ -1,6 +1,7 @@
 package com.rafdev.practice.data.network
 
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.SignInMethodQueryResult
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -22,7 +23,11 @@ class AuthenticationService @Inject constructor(private val firebase: FirebaseCl
 
 //    suspend fun login(email: String, password: String): LoginResult = runCatching {
 //        firebase.auth.signInWithEmailAndPassword(email, password).await()
-//    }.toLoginResult()
+//    }.toLoginResult
+
+    suspend fun isEmailTaken(email: String): SignInMethodQueryResult? {
+        return firebase.auth.fetchSignInMethodsForEmail(email).await()
+    }
 
     suspend fun createAccount(email: String, password: String): AuthResult? {
         return firebase.auth.createUserWithEmailAndPassword(email, password).await()

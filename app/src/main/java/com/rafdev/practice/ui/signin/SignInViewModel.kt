@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rafdev.practice.core.Event
+import com.rafdev.practice.domain.CheckEmailExistenceUseCase
 import com.rafdev.practice.domain.CreateAccountUseCase
 import com.rafdev.practice.ui.signin.model.UserSignIn
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +17,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SignInViewModel @Inject constructor(val createAccountUseCase: CreateAccountUseCase) : ViewModel() {
+class SignInViewModel @Inject constructor(
+    val createAccountUseCase: CreateAccountUseCase,
+    val checkEmailExistenceUseCase: CheckEmailExistenceUseCase
+) : ViewModel() {
 
     private companion object {
         const val MIN_PASSWORD_LENGTH = 6
@@ -47,19 +51,31 @@ class SignInViewModel @Inject constructor(val createAccountUseCase: CreateAccoun
 
     private fun signInUser(userSignIn: UserSignIn) {
         viewModelScope.launch {
-            _viewState.value = SignInViewState(isLoading = true)
-            val accountCreated = createAccountUseCase(userSignIn)
-            if (accountCreated) {
-                Log.i("usuario", "creado")
-//                _navigateToVerifyEmail.value = Event(true)
-            } else {
-                Log.i("usuario", "error")
+            try {
+                _viewState.value = SignInViewState(isLoading = true)
+                val isEmailTaken = checkEmailExistenceUseCase(userSignIn.email)
+                Log.i("usuario", "isEmailTaken: $isEmailTaken")
 
-//                _showErrorDialog.value = true
+                if (isEmailTaken) {
+                    Log.i("usuario", "usuario ya existe")
+                } else {
+                    val accountCreated = createAccountUseCase(userSignIn)
+                    if (accountCreated) {
+                        Log.i("usuario", "creado")
+                        // _navigateToVerifyEmail.value = Event(true)
+                    } else {
+                        Log.i("usuario", "error al crear la cuenta")
+                        // _showErrorDialog.value = true
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e("SignInViewModel", "Error en signInUser", e)
+            } finally {
+                _viewState.value = SignInViewState(isLoading = false)
             }
-            _viewState.value = SignInViewState(isLoading = false)
         }
     }
+
 
     fun onFieldsChanged(userSignIn: UserSignIn) {
         _viewState.value = userSignIn.toSignInViewState()
