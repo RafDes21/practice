@@ -72,8 +72,14 @@ class LoginViewModel @Inject constructor(
         viewModelScope.launch {
             _viewState.value = LoginViewState(isLoading = true)
             sendEmailVerificationUseCase()
-            verificationUseCase()
-//             if (ver){
+            verificationUseCase().collect { isVerified ->
+                if (isVerified) {
+                    // El correo ha sido verificado, puedes realizar acciones aquí
+                    Log.i("usuario", "Correo verificado")
+                    // Por ejemplo, puedes navegar a la siguiente pantalla
+                    _navigateToDetails.value = Event(true)
+                }
+            }//             if (ver){
 //                 _showContinueButton.value = Event(true)
 //
 //             }
