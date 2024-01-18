@@ -104,6 +104,8 @@ class LoginViewModel @Inject constructor(
                         _navigateToVerifyAccount.value = Event(true)
                     }
                 }
+
+                else -> {}
             }
             _viewState.value = LoginViewState(isLoading = false)
         }
